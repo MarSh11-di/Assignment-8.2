@@ -1,8 +1,8 @@
 
 class  Account:
-   def __init__(self,account_number:str, balans:float, holder_name:str):
+   def __init__(self,account_number:str, holder_name:str, initial_balance=0.00):
       self.account_number = account_number
-      self.balans = balans
+      self.balans = initial_balance
       self.holder_name = holder_name
       
    def depositing_money(self, amount:float):
@@ -39,10 +39,10 @@ class SavingsAccount(Account):
    def __str__(self):
       return f"type of account: {self.type_account}; \n account number: {self.account_number}; \n  interest rate:{self.interest_rate}; \n remaining balance:{self.balans}"
 
-amo = Account("36454727223", 1000, "Ivanov")
+amo = Account("36454727223","Ivanov", 1000)
 # print(amo)
-cur = CurrentAccount("1111111111", 5000.00, "Shevchenko")
-sav = SavingsAccount("2222222222", 2000.00, "Shevchenko", 10)
+cur = CurrentAccount("1111111111","Shevchenko", 5000.00, )
+sav = SavingsAccount("2222222222", "Shevchenko", 2000.00, 10)
 
 array_acount =[]
 array_acount.append(cur)
